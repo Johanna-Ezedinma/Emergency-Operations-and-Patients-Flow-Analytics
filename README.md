@@ -1,4 +1,12 @@
-# Code Blue — Emergency Operations & Patient Flow Analytics
+# Code Blue - Emergency Operations & Patient Flow Analytics
+## *How small failures compound into crisis*
+
+**Author:** Johanna Ezedinma  
+**Date:** June 2026   
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/) [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@johannaezedinma/code-blue-emergency-operations-patient-flow-analytics-1cf7176a1ec7) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma)
+
+
 
 > An 11-hospital NHS network is showing signs of strain: long waits, staff burnout,
 > rising readmissions, and a mortality rate that varies sharply by hospital. This
@@ -32,11 +40,11 @@ order they'd need to know it. The guiding question throughout was: *if I had to
 walk into a board meeting with this data, what would I say first, second, and
 third?*
 
-That produced a single connected story: network-wide pressure (Page 1) flows
-into the operational mechanism behind it (Page 2), which flows into cost and
-recommended action (Page 3). A fourth page goes one level deeper, checking
+That produced a single connected story: network-wide pressure - flows
+into the operational mechanism behind it - which flows into cost and
+recommended action - The department page goes one level deeper, checking
 whether the same failure patterns hold at the clinical-department level and
-finds that they don't, which is itself the finding.
+finds that they don't, which is itself a finding.
 
 ---
 
@@ -77,7 +85,7 @@ network, and the morning shift on Mondays alone absorbs 44% of weekly demand.
 **Recommendation:** Four hospitals operating beyond safe capacity is a symptom —
 the next page goes inside the operation to find the cause.
 
-![Pulse](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Pulse.JPG)
+![Pulse](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Pulse.jpg)
 
 ---
 
@@ -96,7 +104,7 @@ overtime and the highest burnout of any shift in the network.
 **Recommendation:** These are the mechanisms behind Page 1's pressure — the next
 page puts a price on them and sets out what to do.
 
-![Operations](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Operations.JPG)
+![Operations](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Operations.jpg)
 
 ---
 
@@ -131,7 +139,7 @@ long-wait visits.
 The final page checks whether the same failures repeat at the clinical
 department level, or whether each specialty needs its own fix.
 
-![Impact](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Impact.JPG)
+![Impact](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Impact.jpg)
 
 ---
 
@@ -153,7 +161,7 @@ network-wide policy — faster access pathways in Mental Health, tighter dischar
 protocols in Cardiology and Geriatrics, and further investigation into whether
 Oncology's mortality figure reflects casemix severity, pathway delay, or both.
 
-![Department](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Department.JPG)
+![Department](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Department.jpg)
 
 ---
 
@@ -487,23 +495,26 @@ include:
 
 ## What I Learned
 
-
 **Dynamic text turns a static report into a tool.** Writing the three priority
 recommendations as measures, rather than text boxes, means they update if a
 viewer filters by year, region, or ownership type, the report keeps making
 sense under filters instead of becoming misleading.
 
 **A finding that doesn't repeat is still a finding.** Page 4 was built expecting
-department-level failures to mirror hospital-level ones. They didn't  Oncology,
+department-level failures to mirror hospital-level ones. They didn't. Oncology,
 Cardiology, and Mental Health each fail in a different way, for a different
 reason, requiring a different fix. 
+
+
 ---
 
 ## Links
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@johannaezedinma) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/)
 
-- **Medium:** [(https://medium.com/@johannaezedinma/code-blue-emergency-operations-patient-flow-analytics-1cf7176a1ec7)]
-- **LinkedIn:** [(https://linkedin.com/in/johanna-ezedinma/)]
-- **Challenge:** [(FP20 Analytics Challenge 38](https://fp20analytics.com/live-challenge/)]
+
+
+**Challenge:** [(FP20 Analytics Challenge 38](https://fp20analytics.com/live-challenge/)]
 
 ---
 
@@ -511,4 +522,4 @@ reason, requiring a different fix.
 
 **Johanna Ezedinma**
 
-[LinkedIn](https://linkedin.com/in/johanna-ezedinma/) · [GitHub](https://github.com/Johanna-Ezedinma)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/)   
