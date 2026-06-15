@@ -77,7 +77,7 @@ network, and the morning shift on Mondays alone absorbs 44% of weekly demand.
 **Recommendation:** Four hospitals operating beyond safe capacity is a symptom —
 the next page goes inside the operation to find the cause.
 
-![Page 1 — Pulse](screenshots/page1_pulse.png)
+![Pulse](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Pulse.JPG)
 
 ---
 
@@ -96,7 +96,7 @@ overtime and the highest burnout of any shift in the network.
 **Recommendation:** These are the mechanisms behind Page 1's pressure — the next
 page puts a price on them and sets out what to do.
 
-![Page 2 — Operations](screenshots/page2_operations.png)
+![Operations](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Operations.JPG)
 
 ---
 
@@ -131,9 +131,7 @@ long-wait visits.
 The final page checks whether the same failures repeat at the clinical
 department level, or whether each specialty needs its own fix.
 
-![Page 3 — Impact](screenshots/page3_impact.png)
-
-![Simulator in action](screenshots/simulator.gif)
+![Impact](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Impact.JPG)
 
 ---
 
@@ -155,7 +153,7 @@ network-wide policy — faster access pathways in Mental Health, tighter dischar
 protocols in Cardiology and Geriatrics, and further investigation into whether
 Oncology's mortality figure reflects casemix severity, pathway delay, or both.
 
-![Page 4 — Department](screenshots/page4_department.png)
+![Department](Dashboards/Code Blue — Emergency Operations & Patient Flow Analytics_C38_Department.JPG)
 
 ---
 
@@ -503,9 +501,9 @@ reason, requiring a different fix.
 
 ## Links
 
-- **Write-up:** [Medium article link]
-- **LinkedIn post:** [LinkedIn link]
-- **Challenge:** [FP20 Analytics Challenge 38](https://fp20.org)
+- **Medium:** [(https://medium.com/@johannaezedinma/code-blue-emergency-operations-patient-flow-analytics-1cf7176a1ec7)]
+- **LinkedIn:** [(https://linkedin.com/in/johanna-ezedinma/)]
+- **Challenge:** [(FP20 Analytics Challenge 38](https://fp20analytics.com/live-challenge/)]
 
 ---
 
