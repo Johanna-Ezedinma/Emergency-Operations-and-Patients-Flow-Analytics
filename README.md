@@ -1,5 +1,6 @@
 # Code Blue - Emergency Operations & Patient Flow Analytics
-## *How small failures compound into crisis*
+### *How small failures compound into crisis*
+
 
 **Author:** Johanna Ezedinma  
 **Date:** June 2026   
@@ -11,19 +12,21 @@
 > An 11-hospital NHS network is showing signs of strain: long waits, staff burnout,
 > rising readmissions, and a mortality rate that varies sharply by hospital. This
 > report investigates where the system is breaking down, why, what it's costing,
-> and what to do about it. Built in Power BI with DAX and Power Query for **The FP20
-> Analytics Challenge 38**.
+> and what to do about it.
+
+Built in Power BI with DAX and Power Query for **The FP20
+Analytics Challenge 38**.
 
 ---
 
 ## The Business Problem
 
-A network of 11 NHS and private hospitals had two years of operational data —
+A network of 11 NHS and private hospitals had two years of operational data:
 patient visits, staffing, and finances, but no way to see which hospitals were
 under the most pressure, why patients were waiting so long, or what any of it
 was costing the network in money and in lives.
 
-Leadership needed answers to three questions, in order: **Where is the system
+The stakeholders needed answers to three questions, in order: **Where is the system
 breaking down? Why is it breaking down? And what would it cost in money and
 in lives to fix it?**
 
@@ -44,7 +47,9 @@ That produced a single connected story: network-wide pressure - flows
 into the operational mechanism behind it - which flows into cost and
 recommended action - The department page goes one level deeper, checking
 whether the same failure patterns hold at the clinical-department level and
-finds that they don't, which is itself a finding.
+finds that they don't. The diagnosis page goes
+deeper still, checking whether the same patients are even reaching the right
+department in the first place.
 
 ---
 
@@ -55,9 +60,10 @@ finds that they don't, which is itself a finding.
 | Patient visits | 9,994 |
 | Hospitals | 11 (NHS and Private) |
 | Clinical departments | 12 |
+| Diagnosis categories | 13 |
 | Period | 2024 – 2025 (24 months) |
 | Currency | GBP (£) |
-| Fact tables | 3 — Patient Visits, Staffing, Financials |
+| Fact tables | 3:  Patient Visits, Staffing, Financials |
 | Dimension tables | 8 |
 
 ---
@@ -65,7 +71,7 @@ finds that they don't, which is itself a finding.
 
 ## Report Structure
 
-The report is organised into four pages that tell one connected story. Each
+The report is organised into five pages that tell one connected story. Each
 page ends by raising the question the next page answers.
 
 ---
@@ -82,8 +88,8 @@ once: wait time, staffing stress, bed occupancy, and mortality. Emergency
 admissions carry both the highest volume and the highest mortality rate in the
 network, and the morning shift on Mondays alone absorbs 44% of weekly demand.
 
-**Recommendation:** Four hospitals operating beyond safe capacity is a symptom —
-the next page goes inside the operation to find the cause.
+**Recommendation:** Four hospitals operating beyond safe capacity is a symptom.
+The next page goes inside the operation to find the cause.
 
 ![Pulse](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Pulse.jpg)
 
@@ -101,7 +107,7 @@ faster than Severity 5 (Non-Urgent) patients at 14 minutes, the triage queue
 isn't prioritising by urgency. The afternoon shift carries both the highest
 overtime and the highest burnout of any shift in the network.
 
-**Recommendation:** These are the mechanisms behind Page 1's pressure — the next
+**Recommendation:** These are the mechanisms behind Page 1's pressure. The next
 page puts a price on them and sets out what to do.
 
 ![Operations](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Operations.jpg)
@@ -111,14 +117,14 @@ page puts a price on them and sets out what to do.
 ### Page 3 — Impact: Cost, Recommendations & Simulation
 
 **Question answered:** What is this costing the network, and what should
-leadership do first?
+be done first?
 
 **Key insight & recommendations:**
 
-1. **Activate an Immediate Surge Protocol at Sandwell General Hospital.**
-   Sandwell is the only hospital in the network simultaneously flagged Critical
+1. **Activate an Immediate Surge Protocol**
+   Sandwell being the only hospital in the network simultaneously flagged Critical
    on staffing stress, wait time (103 mins), bed occupancy (56%), and mortality
-   (4.02%).
+   (4.02%), an immediate surge protocol should be activated.
 2. **Commission a Network-Wide Triage Audit.** The 36-minute gap between
    Severity 1 and Severity 5 wait times at triage is a clinical governance
    failure requiring review at all 11 hospitals, not just the worst-performing
@@ -136,14 +142,14 @@ times would save an estimated £132.7K against the current £530.88K cost of
 long-wait visits.
 
 **Recommendation:** These three actions address the network at hospital level. 
-The final page checks whether the same failures repeat at the clinical
+The next page checks whether the same failures repeat at the clinical
 department level, or whether each specialty needs its own fix.
 
 ![Impact](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Impact.jpg)
 
 ---
 
-### Page 4 — Department: Specialty-Level Vulnerabilities. 
+### Page 4 — Department: Specialty-Level Vulnerabilities
 
 **Question answered:** Do hospital-level failures look the same across clinical
 departments, or does each specialty have its own failure mode?
@@ -157,11 +163,45 @@ longest treatment delays (86 minutes), pointing to an access problem rather than
 a severity one.
 
 **Recommendation:** Each specialty needs a tailored intervention rather than one
-network-wide policy — faster access pathways in Mental Health, tighter discharge
+network-wide polic: faster access pathways in Mental Health, tighter discharge
 protocols in Cardiology and Geriatrics, and further investigation into whether
 Oncology's mortality figure reflects casemix severity, pathway delay, or both.
+But department-level failure is still one step removed from the patient. The
+final page checks whether the underlying diagnosis is reaching the right
+department in the first place.
 
 ![Department](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Department.jpg)
+
+---
+
+### Page 5 — Diagnosis: Is the Right Patient in the Right Department?
+
+**Question answered:** Do the diagnoses with the worst outcomes line up with the
+departments built to treat them or is the network routing patients to the
+wrong place?
+
+**Key insight:** Neurological conditions carry the network's highest mortality
+rate (4.91%) but not its longest length of stay — suggesting acute severity
+rather than prolonged deterioration. Substance Abuse drives the highest
+readmission rate (18.97%). Endocrine/Diabetes patients stay the longest, an
+average of 44 hours. None of these three findings overlap, meaning each failure
+mode has its own diagnostic signature rather than one diagnosis driving every
+metric.
+
+The Diagnosis × Department matrix is the page's central finding: Emergency
+Department absorbs the highest patient volume across 11 of the network's 13
+diagnosis categories including Cardiovascular, Respiratory, and Neurological
+presentations that specialist departments exist to treat. Emergency isn't just
+the busiest department in the network; it is functioning as a catch-all for
+conditions that should be routed to specialist care, which helps explain why it
+can never fully clear its queue.
+
+**Recommendation:** Fixing hospital-level and department-level pressure won't
+hold if the underlying routing problem isn't addressed, patients need to reach
+the correct department on the first pass, not after Emergency absorbs them by
+default.
+
+![Diagnosis](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Diagnosis.jpg)
 
 ---
 
@@ -176,7 +216,8 @@ Oncology's mortality figure reflects casemix severity, pathway delay, or both.
     ├── page2_operations.png
     ├── page3_impact.png
     ├── simulator.gif
-    └── page4_department.png
+    ├── page4_department.png
+    └── page5_diagnosis.png
 ```
 
 ---
@@ -194,12 +235,12 @@ Oncology's mortality figure reflects casemix severity, pathway delay, or both.
 ## Dataset Structure
 
 **Fact tables:**
-- `Fact_Patient_Visits` — one row per patient visit, covering wait time, triage
+- `Fact_Patient_Visits` - one row per patient visit, covering wait time, triage
   delay, treatment delay, length of stay, severity level, admission type,
   mortality flag, and 30-day readmission flag
-- `Fact_Staffing` — one row per hospital per shift, covering overtime hours,
+- `Fact_Staffing` - one row per hospital per shift, covering overtime hours,
   burnout index, and absence rate
-- `Fact_Financials` — one row per hospital per month, covering cost per visit,
+- `Fact_Financials` - one row per hospital per month, covering cost per visit,
   revenue per visit, and bed occupancy rate
 
 **Dimension tables:** `Dim_Hospital`, `Dim_Date`, `Dim_Department`, `Dim_Region`,
@@ -336,7 +377,7 @@ RETURN
 ### Dynamic Recommendation Text
 
 Each of the three priority cards on Page 3 is a single measure that rewrites
-itself based on the current filter context — if a judge filters to NHS-only or
+itself based on the current filter context  if filtered to NHS-only or
 2025-only, the hospital named and the numbers quoted update automatically.
 
 ```dax
@@ -471,25 +512,16 @@ All row-level columns were created in Power Query rather than DAX, keeping the
 measures table focused on aggregation and conditional logic. Key transforms
 include:
 
-- **`Fact_Patient_Visits`** — Arrival_Date / Hour / DayOfWeek / Shift, Wait_Band,
+- **`Fact_Patient_Visits`** - Arrival_Date / Hour / DayOfWeek / Shift, Wait_Band,
   Severity_Label, Is_High_Severity, Triage_Delay_Minutes, Is_Long_Wait, LOS_Band,
   Month_Year, and Outcome_Group
-- **`Fact_Staffing`** — Total_Clinical_Staff, Absence_Rate, Burnout_Band,
+- **`Fact_Staffing`** - Total_Clinical_Staff, Absence_Rate, Burnout_Band,
   Overtime_Flag, and Shift_Sort (for correct AM/PM/Night ordering)
-- **`Fact_Financials`** — Cost_Per_Visit, Revenue_Gap, Occupancy_Band, and a
+- **`Fact_Financials`** - Cost_Per_Visit, Revenue_Gap, Occupancy_Band, and a
   Date_Key column to fix the relationship to `Dim_Date`
-- **`Dim_Date`** — a full custom date table built via Power Query script, plus
+- **`Dim_Date`** - a full custom date table built via Power Query script, plus
   Month_Year_Label and Month_Year_Sort
-- **`Dim_Hospital`** — Stress_Sort, Hospital_Short, and Is_NHS
-
----
-
-## Data Quality Notes
-
-| Issue | Status | Impact |
-|---|---|---|
-| `Fact_Financials` initially disconnected from `Dim_Date` | Fixed: added a `Date_Key` column via Power Query and rebuilt the relationship | Bed occupancy YoY/MoM measures were returning flat or incorrect values |
-| Cost per Visit has no department grain | Documented: `Fact_Financials` is Hospital × Month only, so Cost per Visit cannot vary by department | The Page 4 department table excludes Cost per Visit; Revenue per Visit (sourced from `Fact_Patient_Visits`) is used instead |
+- **`Dim_Hospital`** - Stress_Sort, Hospital_Short, and Is_NHS
 
 ---
 
@@ -503,8 +535,13 @@ sense under filters instead of becoming misleading.
 **A finding that doesn't repeat is still a finding.** Page 4 was built expecting
 department-level failures to mirror hospital-level ones. They didn't. Oncology,
 Cardiology, and Mental Health each fail in a different way, for a different
-reason, requiring a different fix. 
+reason, requiring a different fix.
 
+**A number that breaks its own logic is worth investigating, not hiding.**
+Spotting that Treatment Delay could exceed Wait Time meant the relationship
+between two fields couldn't be taken at face value. Reframing the metric rather
+than quietly dropping it kept the finding intact while being honest about what
+the data could and couldn't support.
 
 ---
 
@@ -519,6 +556,7 @@ reason, requiring a different fix.
 ---
 
 ## Author
+
 
 **Johanna Ezedinma**
 
