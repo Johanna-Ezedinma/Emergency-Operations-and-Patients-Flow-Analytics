@@ -206,7 +206,7 @@ hold if the underlying routing problem isn't addressed — patients need to reac
 the correct department on the first pass, not after Emergency absorbs them by
 default.
 
-![Diagnosis](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Diagnosis.jpg)
+![Diagnosis](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Diagnosis.png)
 
 ---
 
