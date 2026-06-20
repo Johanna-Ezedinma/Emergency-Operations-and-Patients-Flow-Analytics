@@ -61,7 +61,7 @@ department in the first place.
 | Diagnosis categories | 13 |
 | Period | 2024 – 2025 (24 months) |
 | Currency | GBP (£) |
-| Fact tables | 3 — Patient Visits, Staffing, Financials |
+| Fact tables | 3 Patient Visits, Staffing, Financials |
 | Dimension tables | 8 |
 
 ---
