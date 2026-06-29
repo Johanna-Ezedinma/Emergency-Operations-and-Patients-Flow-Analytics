@@ -1,4 +1,4 @@
-# Code Blue - Emergency Operations & Patient Flow Analytics
+# Emergency Operations & Patient Flow Analytics
 ### *How small failures compound into crisis*
 
 **Author:** Johanna Ezedinma  
@@ -42,9 +42,9 @@ order they'd need to know it. The guiding question throughout was: *if I had to
 walk into a board meeting with this data, what would I say first, second, and
 third?*
 
-That produced a single connected story: network-wide pressure - flows
-into the operational mechanism behind it - which flows into cost and
-recommended action - The department page goes one level deeper, checking
+That produced a single connected story: network-wide pressure flows
+into the operational mechanism behind it  which flows into cost and
+recommended action. The department page goes one level deeper, checking
 whether the same failure patterns hold at the clinical-department level. The diagnosis page goes
 deeper still, checking whether the same patients are even reaching the right
 department in the first place.
@@ -74,7 +74,7 @@ page ends by raising the question the next page answers.
 
 ---
 
-### Page 1 Pulse: Network Demand & Pressure Overview
+### The Pulse: Network Demand & Pressure Overview
 
 **Question answered:** Where is the network under pressure right now, and which
 hospitals need attention first?
@@ -82,12 +82,14 @@ hospitals need attention first?
 **Key insight:** Three hospitals: Leeds General Infirmary, Sandwell General,
 and Nuffield Health are flagged Critical, and no two are failing the same
 way. Leeds has the network's longest average wait (107 mins) and highest bed
-occupancy, a capacity problem. Sandwell has the network's highest mortality
+occupancy, a capacity problem.   
+Sandwell has the network's highest mortality
 rate (4.02%) and is the only hospital flagged Critical for staffing stress,
-with the fewest vacant beds in the network. Nuffield Health has no single
-worst metric — Low staffing stress, mid-range wait time yet lands in
+with the fewest vacant beds in the network.    
+Nuffield Health has no single worst metric; Low staffing stress, mid-range wait time yet lands in
 the same Critical tier purely because every metric is consistently bad at
-once. Emergency admissions carry both the highest volume and the highest
+once.  
+Emergency admissions carry both the highest volume and the highest
 mortality rate in the network, and the morning shift on Mondays alone absorbs
 44% of weekly demand.
 
@@ -98,19 +100,21 @@ the next page goes inside the operation to find the cause.
 
 ---
 
-### Page 2 Operations: Diagnosing the Care Pathway
+### The Operations: Diagnosing the Care Pathway
 
 **Question answered:** Why are these hospitals under pressure, and at which
 stage of the patient journey does it actually happen?
 
-**Key insight:** Staffing stress alone doesn't predict who waits longest, 
+**Key insight:** Staffing stress alone doesn't predict who waits longest.   
 Leeds General sits under Moderate stress with the network's longest wait
 (107 mins), while Nuffield Health shows Low stress can still coincide with
-high overall network pressure. University College London moves patients
-through fastest overall (93 mins). Severity 1 (Immediate) patients wait 50
+high overall network pressure.   
+University College London moves patients
+through fastest overall (93 mins). 
+Severity 1 (Immediate) patients wait 50
 minutes at triage, only 36 minutes faster than Severity 5 (Non-Urgent)
-patients at 14 minutes the triage queue isn't prioritising by urgency. The
-afternoon shift carries both the highest overtime and the highest burnout of
+patients at 14 minutes the triage queue isn't prioritising by urgency.  
+The afternoon shift carries both the highest overtime and the highest burnout of
 any shift in the network.
 
 **Recommendation:** These are the mechanisms behind Page 1's pressure. The next
@@ -120,7 +124,7 @@ page puts a price on them and sets out what to do.
 
 ---
 
-### Page 3  Impact: Cost, Recommendations & Simulation
+### The Impact: Cost, Recommendations & Simulation
 
 **Question answered:** What is this costing the network, and what should
 be done first?
@@ -140,30 +144,31 @@ be done first?
    against a 17.0% average checklists, telemedicine check-ins, and community
    follow-up calls could close this gap without new infrastructure spend.
 
-**The simulator** —  at a 15-minute triage target, 5,164 patients currently fall outside it; at 85%
+**The simulator**  at a 15-minute triage target, 5,164 patients currently fall outside it; at 85%
 occupancy, that threshold was crossed 22 times across the network in two years
 (roughly 0.9 hospitals over capacity every month); and a 20% reduction in wait
 times would save an estimated £692.37K against the current £3.46M cost of
 long-wait visits.
 
 **Recommendation:** These three actions address the network at hospital level. 
-The next page checks whether the same failures repeat at the clinical
+The department page checks whether the same failures repeat at the clinical
 department level, or whether each specialty needs its own fix.
 
 ![Impact](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Impact.jpg)
 
 ---
 
-### Page 4 Department: Specialty-Level Vulnerabilities
+### Department: Specialty-Level Vulnerabilities
 
 **Question answered:** Do hospital-level failures look the same across clinical
 departments, or does each specialty have its own failure mode?
 
 **Key insight:** Oncology carries the network's highest mortality rate, likely
-reflecting the severity of patients on arrival rather than a process failure.
+reflecting the severity of patients on arrival rather than a process failure.   
 Cardiology has the highest readmission rate, echoing King's College's
 hospital-level finding from Page 3: the discharge-planning gap shows up by
-specialty as well as by hospital. Mental Health patients face the network's
+specialty as well as by hospital.   
+Mental Health patients face the network's
 longest treatment delays (86 minutes), pointing to an access problem rather than
 a severity one.
 
@@ -179,7 +184,7 @@ department in the first place.
 
 ---
 
-### Page 5 Diagnosis: Is the Right Patient in the Right Department?
+### Diagnosis: Is the Right Patient in the Right Department?
 
 **Question answered:** Do the diagnoses with the worst outcomes line up with the
 departments built to treat them or is the network routing patients to the
@@ -202,7 +207,7 @@ conditions that should be routed to specialist care, which helps explain why it
 can never fully clear its queue.
 
 **Recommendation:** Fixing hospital-level and department-level pressure won't
-hold if the underlying routing problem isn't addressed — patients need to reach
+hold if the underlying routing problem isn't addressed, patients need to reach
 the correct department on the first pass, not after Emergency absorbs them by
 default.
 
@@ -238,16 +243,14 @@ default.
 ---
 
 
-
-```
-
-## Data Quality Notes
+Data Quality Notes
 
 | Issue | Status | Impact |
 |---|---|---|
 | `Fact_Financials` initially disconnected from `Dim_Date` | Fixed: added a `Date_Key` column via Power Query and rebuilt the relationship | Bed occupancy YoY/MoM measures were returning flat or incorrect values
 | `Treatment_Delay_Minutes` appeared to exceed `Wait_Time_Minutes` in individual rows | `Wait_Time_Minutes_Corrected` column was added in Power Query, calculated directly from the two timestamps. Network average wait time moved from 61 mins (broken) to 99 mins (corrected)
 | Recalculating wait time from timestamps produces 169 blank values where `Treatment_Start_DateTime` is missing (patients who left against medical advice, died before treatment, or have incomplete records) | A ~1.7% reduction in the patient count feeding wait-time measures; negligible effect on the network average |
+
 
 ---
 
@@ -276,16 +279,8 @@ problem, one was a staffing and mortality problem, and one had no single
 worst metric at all just three consistently bad numbers compounding
 together. Decomposing the score into its components, rather than trusting
 the final label, was the only way to see that.
-```
----
-
-## Links
-[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@johannaezedinma) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma) 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/)
 
 
-
-**Challenge:** [(FP20 Analytics Challenge 38](https://fp20analytics.com/live-challenge/)]
 
 ---
 
@@ -293,4 +288,5 @@ the final label, was the only way to see that.
 
 **Johanna Ezedinma**
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/)   
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@johannaezedinma) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Johanna-Ezedinma) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/johanna-ezedinma/)
