@@ -96,7 +96,7 @@ mortality rate in the network, and the morning shift on Mondays alone absorbs
 **Recommendation:** Four hospitals operating beyond safe capacity is a symptom,
 the next page goes inside the operation to find the cause.
 
-![Pulse](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Pulse.jpg)
+![Pulse](./Dashboards/Emergency%20Operations%20&%20Patient%20Flow%20Analytics_Pulse.jpg)
 
 ---
 
@@ -120,7 +120,7 @@ any shift in the network.
 **Recommendation:** These are the mechanisms behind Page 1's pressure. The next
 page puts a price on them and sets out what to do.
 
-![Operations](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Operations.jpg)
+![Operations](./Dashboards/Emergency%20Operations%20&%20Patient%20Flow%20Analytics_Operations.jpg)
 
 ---
 
@@ -154,7 +154,7 @@ long-wait visits.
 The department page checks whether the same failures repeat at the clinical
 department level, or whether each specialty needs its own fix.
 
-![Impact](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Impact.jpg)
+![Impact](./Dashboards/Emergency%20Operations%20&%20Patient%20Flow%20Analytics_Impact.jpg)
 
 ---
 
@@ -180,7 +180,7 @@ But department-level failure is still one step removed from the patient, the
 diagnosis page checks whether the underlying diagnosis is reaching the right
 department in the first place.
 
-![Department](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Department.jpg)
+![Department](./Dashboards/Emergency%20Operations%20&%20Patient%20Flow%20Analytics_Department.jpg)
 
 ---
 
@@ -211,7 +211,7 @@ hold if the underlying routing problem isn't addressed, patients need to reach
 the correct department on the first pass, not after Emergency absorbs them by
 default.
 
-![Diagnosis](./Dashboards/Code%20Blue%20—%20Emergency%20Operations%20&%20Patient%20Flow%20Analytics_C38_Diagnosis.png)
+![Diagnosis](./Dashboards/Emergency%20Operations%20&%20Patient%20Flow%20Analytics_Diagnosis.png)
 
 ---
 
